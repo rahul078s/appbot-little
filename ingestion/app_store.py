@@ -1,6 +1,6 @@
 from app_store_scraper import AppStore
 
-def fetch_apple_reviews(app_name, app_id, count=100):
+def fetch_apple_reviews(app_name, app_id, count=1000):
     app = AppStore(
         country="in",   # 🔑 CHANGE THIS (try 'in' first)
         app_name=app_name,

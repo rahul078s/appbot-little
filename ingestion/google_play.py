@@ -1,6 +1,6 @@
 from google_play_scraper import reviews, Sort
 
-def fetch_google_reviews(app_id, count=100):
+def fetch_google_reviews(app_id, count=1000):
     result, _ = reviews(
         app_id,
         lang="en",
