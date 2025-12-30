@@ -25,8 +25,13 @@ def save_review(app_id, store, r):
                 r.get("version"),
                 r.get("date")
             ))
+
+            inserted = cur.rowcount == 1  # 🔑 THE KEY FIX
+
         conn.commit()
+        return inserted
 
     except Exception as e:
-        conn.rollback()   # 🔑 THIS FIXES THE BUG
+        conn.rollback()
         print("DB ERROR:", e)
+        return False
